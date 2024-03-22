@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.orderPurchase.product.ProductCategoryFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menuCategoryItemCardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp">
+
+        <androidx.appcompat.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/menuCategoryItemSearchView"
+            android:background="@color/white"
+            app:iconifiedByDefault="false"
+            app:queryHint="Cerca product" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_below="@+id/menuCategoryItemCardView"
+        android:layout_marginVertical="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/viewCartProductCategoryButton"
+        app:layout_constraintTop_toBottomOf="@id/menuCategoryItemCardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        android:clickable="true"
+        tools:listitem="@layout/product_item"
+        android:id="@+id/menuCategoryItemRecyclerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/viewCartProductCategoryButton"
+        app:layout_constraintTop_toBottomOf="@+id/menuCategoryItemCardView"
+        android:focusable="true" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <Button
+        android:id="@+id/viewCartProductCategoryButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Visualizza ordine"
+        style="@style/Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        android:layout_marginHorizontal="16dp">
+
+    </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

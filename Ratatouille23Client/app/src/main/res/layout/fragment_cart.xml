@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.orderPurchase.cart.CartFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_marginVertical="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        android:clickable="true"
+        tools:listitem="@layout/cart_item"
+        android:id="@+id/cartProductRecyclerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="parent"
+        android:focusable="true" />
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/particularRequestsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:text = "Note ordine"
+                style="@style/TextAppearance.MaterialComponents.Subtitle2"
+                app:layout_constraintTop_toBottomOf="@+id/commonAllergensTextView"/>
+
+
+
+            <EditText
+                android:id="@+id/particularRequestsEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_textfield"
+                android:gravity="start|top"
+                android:hint="Aggiungi una nota"
+                android:padding = "8dp"
+                android:layout_margin="8dp"
+                android:inputType="textMultiLine"
+                android:minHeight="48dp"
+                android:minLines="3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/particularRequestsTextView"
+                >
+
+            </EditText>
+
+            <TextView
+                android:id="@+id/totalOrderTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="16dp"
+                android:text="Totale: 0.0 €"
+                style="@style/TextAppearance.MaterialComponents.Headline6" />
+
+
+
+            <Button
+                android:id="@+id/confirmOrderButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Conferma ordine"
+                style="@style/Button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                android:layout_marginHorizontal="16dp" />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="orderItem"
+            type="com.example.ratatouille23client.model.OrderItem" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        app:cardElevation="8dp"
+        android:padding="3dp"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/productNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:singleLine="true"
+                android:layout_marginHorizontal="8dp"
+                android:textColor="@color/black"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:text="@{orderItem.product.name}">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/productQuantityTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productNameTextView"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/black"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:text="@{`Quantità: `+String.valueOf(orderItem.quantity)}">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/productParticularRequestsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginBottom="8dp"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:text="@{orderItem.particularRequests}"
+                android:layout_below="@+id/productQuantityTextView">
+
+            </TextView>
+
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

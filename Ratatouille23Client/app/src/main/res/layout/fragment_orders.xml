@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.orderManagement.OrdersFragment"
+    android:orientation="vertical"
+    >
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="auto"
+        app:tabGravity="fill"
+        app:tabIndicatorGravity="stretch"
+        android:layout_margin="8dp"
+        android:background="@drawable/tab_background"
+        app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+        app:tabSelectedTextColor="@color/white"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabIndicator="@drawable/selected_tab"
+        app:tabIndicatorColor="@color/appBlueColor">
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="@integer/material_motion_duration_long_1"
+        android:layout_below="@+id/tabLayout"
+        android:layout_marginBottom="8dp">
+    </androidx.viewpager2.widget.ViewPager2>
+
+</LinearLayout>

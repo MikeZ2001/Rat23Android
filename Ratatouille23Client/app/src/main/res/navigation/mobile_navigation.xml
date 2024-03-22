@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_ordinazione">
+
+    <fragment
+        android:id="@+id/nav_comande"
+        android:name="com.example.ratatouille23client.ui.orderManagement.OrdersFragment"
+        android:label="@string/menu_comande"
+        tools:layout="@layout/fragment_orders" >
+        <action
+            android:id="@+id/action_nav_comande_to_visualizationAcceptedOrdersFragment"
+            app:destination="@id/visualizationAcceptedOrdersFragment" />
+        <action
+            android:id="@+id/action_nav_comande_to_visualizationReadyOrdersFragment"
+            app:destination="@id/visualizationReadyOrdersFragment" />
+        <action
+            android:id="@+id/action_nav_comande_to_visualizationCompletedOrderFragment"
+            app:destination="@id/visualizationCompletedOrderFragment" />
+        <action
+            android:id="@+id/action_nav_comande_to_visualizationDeletedOrdersFragment"
+            app:destination="@id/visualizationDeletedOrdersFragment" />
+        <action
+            android:id="@+id/action_nav_comande_to_visualizationPayedOrderFragment"
+            app:destination="@id/visualizationPayedOrderFragment" />
+        <action
+            android:id="@+id/action_nav_comande_to_visualizationInProgressOrderFragment"
+            app:destination="@id/visualizationInProgressOrderFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_ordinazione"
+        android:name="com.example.ratatouille23client.ui.orderPurchase.table.TableFragment"
+        android:label="@string/orderTable"
+        tools:layout="@layout/fragment_tables" >
+        <action
+            android:id="@+id/action_nav_ordinazione_to_menuCategoryFragment"
+            app:destination="@id/menuCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuCategoryFragment"
+        android:name="com.example.ratatouille23client.ui.orderPurchase.category.MenuCategoryFragment"
+        android:label="@string/menu_category"
+        tools:layout="@layout/fragment_menu_category" >
+        <action
+            android:id="@+id/action_menuCategoryFragment_to_menuItemFragment"
+            app:destination="@id/menuItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuItemFragment"
+        android:name="com.example.ratatouille23client.ui.orderPurchase.product.ProductCategoryFragment"
+        android:label="@string/menu_item"
+        tools:layout="@layout/fragment_product_category" >
+        <action
+            android:id="@+id/action_menuItemFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_menuItemFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.ratatouille23client.ui.orderPurchase.cart.CartFragment"
+        android:label="@string/orderTitle"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cartFragment_to_nav_ordinazione"
+            app:destination="@id/nav_ordinazione" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.example.ratatouille23client.ui.orderPurchase.product.ProductDetailFragment"
+        android:label="Dettaglio prodotto"
+        tools:layout="@layout/fragment_product_detail" >
+        <action
+            android:id="@+id/action_productDetailFragment_to_menuItemFragment"
+            app:destination="@id/menuItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/visualizationAcceptedOrdersFragment"
+        android:name="com.example.ratatouille23client.ui.orderManagement.acceptedOrder.VisualizationAcceptedOrdersFragment"
+        android:label="Visualizzazione comanda accettata"
+        tools:layout="@layout/fragment_visualization_accepted_orders" >
+        <action
+            android:id="@+id/action_visualizationAcceptedOrdersFragment_to_menuCategoryFragment"
+            app:destination="@id/menuCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/visualizationReadyOrdersFragment"
+        android:name="com.example.ratatouille23client.ui.orderManagement.readyOrder.VisualizationReadyOrdersFragment"
+        android:label="Visualizzazione comanda pronta"
+        tools:layout="@layout/fragment_visualization_ready_orders" >
+        <action
+            android:id="@+id/action_visualizationReadyOrdersFragment_to_menuCategoryFragment"
+            app:destination="@id/menuCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/visualizationCompletedOrderFragment"
+        android:name="com.example.ratatouille23client.ui.orderManagement.completedOrder.VisualizationCompletedOrderFragment"
+        android:label="Visualizzazione comanda servita"
+        tools:layout="@layout/fragment_visualization_completed_order" >
+        <action
+            android:id="@+id/action_visualizationCompletedOrderFragment_to_menuCategoryFragment"
+            app:destination="@id/menuCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/visualizationDeletedOrdersFragment"
+        android:name="com.example.ratatouille23client.ui.orderManagement.deletedOrder.VisualizationDeletedOrdersFragment"
+        android:label="Visualizzazione comanda annullata"
+        tools:layout="@layout/fragment_visualization_deleted_orders" />
+    <fragment
+        android:id="@+id/visualizationPayedOrderFragment"
+        android:name="com.example.ratatouille23client.ui.orderManagement.payedOrder.VisualizationPayedOrderFragment"
+        android:label="Visualizzazione comanda pagata"
+        tools:layout="@layout/fragment_visualization_payed_order" />
+    <fragment
+        android:id="@+id/visualizationInProgressOrderFragment"
+        android:name="com.example.ratatouille23client.ui.orderManagement.inProgressOrder.VisualizationInProgressOrderFragment"
+        android:label="Visualizzazione comanda in preparazione"
+        tools:layout="@layout/fragment_visualization_in_progress_order" />
+</navigation>

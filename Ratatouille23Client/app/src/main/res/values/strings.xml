@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Ratatouille23Client</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Michele Zurlo (administrator)</string>
+    <string name="nav_header_subtitle">michelezurlo75@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_esercizio">Esercizio</string>
+    <string name="menu_ordinazione">Ordinazione</string>
+    <string name="menu_comande">Comande</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_category">Categorie Menu</string>
+    <string name="menu_item">Prodotti Categoria</string>
+    <string name="orderTable">Tavoli</string>
+    <string name="orderTitle">Ordine</string>
+</resources>
