@@ -9,15 +9,8 @@ import retrofit2.http.Url;
 
 public class RetrofitInstance {
 
-    //public static String baseURL="http://192.168.1.16:8080/";
-
-    //public static String baseURL="http://192.168.1.165:8080/";
-
-    //OLD
-   // public static String baseURL="http://ec2-100-25-193-144.compute-1.amazonaws.com:8080/";
-
     //NEW
-    public static String baseURL="http://mikedns.eastus.cloudapp.azure.com:8080/";
+    public static String baseURL="http://";
 
     private static Retrofit retrofitInstance;
 
@@ -25,7 +18,7 @@ public class RetrofitInstance {
 
         if(retrofitInstance==null){
             retrofitInstance = new Retrofit.Builder()
-                    .baseUrl(baseURL)
+                   // .baseUrl(baseURL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build();
